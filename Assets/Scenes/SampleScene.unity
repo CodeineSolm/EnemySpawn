@@ -661,6 +661,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _template: {fileID: 3363481838859430944, guid: b61f575b7d763ed4b89d8780bca3d122, type: 3}
+  _delayTime: 2
 --- !u!4 &1208346116
 Transform:
   m_ObjectHideFlags: 0

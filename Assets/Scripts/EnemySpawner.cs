@@ -5,8 +5,9 @@ using UnityEngine;
 public class EnemySpawner : MonoBehaviour
 {
     [SerializeField] private Enemy _template;
+    [SerializeField] private float _delayTime;
     private Transform[] _spawnPoints;
-    private float _delayTime;
+    private float _delaySpawnTime;
 
     private void Start()
     {
@@ -16,18 +17,18 @@ public class EnemySpawner : MonoBehaviour
         {
             _spawnPoints[i] = transform.GetChild(i);
         }
-        _delayTime = 2f;
+        _delaySpawnTime = _delayTime;
         Spawn();
     }
 
     private void Update()
     {
-        _delayTime -= Time.deltaTime;
+        _delaySpawnTime -= Time.deltaTime;
 
-        if (_delayTime <= 0)
+        if (_delaySpawnTime <= 0)
         {
             Spawn();
-            _delayTime = 2f;
+            _delaySpawnTime = _delayTime;
         }
     }
 
